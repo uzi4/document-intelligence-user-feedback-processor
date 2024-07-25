@@ -72,8 +72,13 @@ To deploy the infrastructure, run the [`Setup-Environment.ps1`](./Setup-Environm
 > [!NOTE]
 > If you have not logged into the Azure CLI, you will need to run `az login --use-device-code` to authenticate from within the Dev Container. Running `az account set --subscription <subscription-id>` will also set the default subscription to the one you want to use if you have multiple subscriptions.
 
+### Setup folder and files permissions
+sudo chmod 777 Setup-Environment.ps1
+sudo chmod 777 ./infra/
+sudo chmod -R 777 ../document-intelligence-user-feedback-processor/
+
 ```powershell
-./Setup-Environment.ps1 -DeploymentName docintel-feedback -Location westeurope -SkipInfrastructure $false
+./Setup-Environment.ps1 -DeploymentName docintel-feedback-loop -Location centralus -SkipInfrastructure $true
 ```
 
 ### Run the sample notebook

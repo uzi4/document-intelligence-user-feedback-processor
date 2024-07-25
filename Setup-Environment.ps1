@@ -20,7 +20,7 @@ param
     [Parameter(Mandatory = $true)]
     [string]$Location,
     [Parameter(Mandatory = $true)]
-    [string]$SkipInfrastructure
+    [bool]$SkipInfrastructure
 )
 
 function Set-ConfigurationFileVariable($configurationFile, $variableName, $variableValue) {
